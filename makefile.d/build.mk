@@ -6,14 +6,14 @@ ifeq ($(yaamake_stage),v)
 # ----------------
 
 CCVERSION_CPP11_OK := $(call version_compare,$(CCVERSION),>=,4.7)
-
+CCVERSION_CPP14_OK := $(call version_compare,$(CCVERSION),>=,5.0)
 
 # Common Compiler Options
 # -----------------------
 
 # Standards
 CSTANDARD ?= -std=c99
-CXXSTANDARD ?= $(if $(CCVERSION_CPP11_OK),-std=c++11,-std=c++0x)
+CXXSTANDARD ?= $(if $(CCVERSION_CPP14_OK),-std=c++14,$(if $(CCVERSION_CPP11_OK),-std=c++11,-std=c++0x))
 
 # Place your -D or -U options here
 # DEFS +=
