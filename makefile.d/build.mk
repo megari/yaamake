@@ -72,6 +72,7 @@ COFLAGS += -fpack-struct
 COFLAGS += -fshort-enums
 COFLAGS += -ffreestanding
 COFLAGS += -fno-exceptions
+COFLAGS += -fno-threadsafe-statics
 COFLAGS += $(if $(CCVERSION_CPP11_OK),-flto,) # required here to have any effect on linking
 #COFLAGS += -fno-unit-at-a-time
 
